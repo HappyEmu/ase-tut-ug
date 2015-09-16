@@ -17,8 +17,7 @@ html lang="en"
   body
     = nav_bar static: :top, brand: 'ASE Tutorial UG' do
       = menu_group do
-        = menu_item 'Hello'
-        = menu_item 'World'
+        = menu_item 'Articles', articles_path
 
     .container
       .row
@@ -28,4 +27,4 @@ html lang="en"
         .col-lg-3
 
       footer
-        p &copy; Company 2015
+        p ASE Course 2015, Urs Gerber
