@@ -30,5 +30,8 @@ group :development do
 end
 
 gem 'rails_12factor', group: :production # heroku needs this
-gem 'slim'
+
+gem 'slim-rails'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails', :git => 'https://github.com/seyhunak/twitter-bootstrap-rails.git'
 
