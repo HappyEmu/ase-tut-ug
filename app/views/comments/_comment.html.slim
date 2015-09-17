@@ -1,8 +1,9 @@
-dt Commenter:
-dd= comment.commenter
+dl.dl-horizontal
+  dt Commenter:
+  dd= comment.commenter
 
-dt Comment:
-dd= comment.body
+  dt Comment:
+  dd= comment.body
 
-dt Actions:
-dd= link_to 'Destroy', comment, data: { confirm: 'Are you sure?'}, method: :delete
+  dt Actions:
+  dd= link_to 'Delete', comment, data: { confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger btn-xs'
