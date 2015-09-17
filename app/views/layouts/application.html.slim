@@ -26,5 +26,23 @@ html lang="en"
           = yield
         .col-lg-3
 
-      footer
-        p ASE Course 2015, &copy; Urs Gerber
+  footer.footer
+    .container
+      table.table-condensed
+        tr
+          td
+            strong Course
+          td ASE 2015
+          td
+            strong GitHub Repo
+          td= link_to 'https://github.com/HappyEmu/ase-tut-ug'
+        tr
+          td
+            strong Author
+          td= link_to 'Urs Gerber', 'https://github.com/HappyEmu'
+
+      /dl.dl-horizontal
+        dt Course
+        dd ASE Course 2015
+        dt Author
+        dd= link_to '&copy; Urs Gerber'.html_safe, 'https://github.com/HappyEmu'
