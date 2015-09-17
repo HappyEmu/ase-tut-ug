@@ -1,12 +1,11 @@
-- model_class = Article
 .page-header
-  h1=t '.title', :default => model_class.model_name.human.titleize
+  h1=t '.title', :default => Article.model_name.human.titleize
 
 dl.dl-horizontal
-  dt= model_class.human_attribute_name(:title) + ':'
+  dt= Article.human_attribute_name(:title) + ':'
   dd= @article.title
 
-  dt= model_class.human_attribute_name(:text) + ':'
+  dt= Article.human_attribute_name(:text) + ':'
   dd= @article.text
 
 = link_to t('.back', :default => t("helpers.links.back")), articles_path, :class => 'btn btn-default'
@@ -24,8 +23,4 @@ h2 Comments
 hr
 
 h2 New Comment
-= bootstrap_form_for([@article, @article.comments.build], layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-6') do |f|
-  = f.text_field :commenter
-  = f.text_area :body
-
-  = f.primary
+= render partial: 'comments/form'
