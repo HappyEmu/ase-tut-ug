@@ -37,3 +37,7 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails', :git => 'https://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'bootstrap_form'
 
+# Seed random data
+gem 'fabrication'
+gem 'faker'
+

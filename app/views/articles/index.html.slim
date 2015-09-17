@@ -8,8 +8,8 @@
     thead
       tr
         th= Article.human_attribute_name(:id)
-        th= Article.human_attribute_name(:title)
-        th= Article.human_attribute_name(:text)
+        th.col-md-2= Article.human_attribute_name(:title)
+        th.col-md-4= Article.human_attribute_name(:text)
         th= Article.human_attribute_name(:created_at)
         th=t '.actions', :default => t("helpers.actions")
     tbody
@@ -18,7 +18,7 @@
           td= link_to article.id, article_path(article)
           td= article.title
           td= article.text
-          td=l article.created_at
+          td=l article.created_at, format: :short
           td
             = link_to t('.edit', :default => t("helpers.links.edit")), edit_article_path(article), :class => 'btn btn-default btn-xs'
             '
