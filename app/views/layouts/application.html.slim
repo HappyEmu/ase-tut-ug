@@ -4,7 +4,7 @@ html lang="en"
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    title= content_for?(:title) ? yield(:title) : "ASE-Tut UG"
+    title= content_for?(:title) ? yield(:title) : "ASE Rails Tutorial"
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
     = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
@@ -15,7 +15,7 @@ html lang="en"
     = javascript_include_tag "application"
 
   body
-    = nav_bar static: :top, brand: 'ASE Tutorial UG' do
+    = nav_bar static: :top, brand: 'ASE Rails Tutorial' do
       = menu_group do
         = menu_item 'Articles', articles_path
 
@@ -24,16 +24,20 @@ html lang="en"
         .col-lg-9
           = bootstrap_flash
           = yield
-        .col-lg-3
+        #sidebar.col-lg-3
+          - if content_for?(:sidebar)
+            .well.sidebar-nav
+              h4.text-center Actions
+              hr
+              = yield(:sidebar)
 
   footer.footer
     .container
       table.table-condensed
         tr
-          td: strong Course
+          td: strong Course:
           td ASE 2015
-          td: strong GitHub Repo
+          td: strong GitHub Repo:
           td= link_to 'https://github.com/HappyEmu/ase-tut-ug', 'https://github.com/HappyEmu/ase-tut-ug'
-        tr
-          td: strong Author
-          td= link_to 'Urs Gerber', 'https://github.com/HappyEmu'
+          td: strong Author:
+          td= link_to 'Urs Gerber (09-921-156)', 'https://github.com/HappyEmu'
